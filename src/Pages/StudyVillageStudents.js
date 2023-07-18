@@ -5,29 +5,34 @@ import {
   TableCell,
   TableContainer,
   TableRow,
+  TextField,
   tableCellClasses,
 } from "@mui/material";
 import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import pic from "../components/CompanyProfile/studyvillage.png";
 import "./EveryPage.css";
+import SearchIcon from "@mui/icons-material/Search";
 const datas = [
-  { api_name: "Company Principal", field: "James Anderson" },
-  { api_name: "Referral ID", field: 9238627185621753 },
-  { api_name: "Key Contact email address", field: "svagent111@gmail.com" },
-  { api_name: "Company address", field: "95 Collins St Melbourne" },
-  { api_name: "Phone Number", field: "9781 5158" },
-  { api_name: "Website", field: "www.google.com" },
+  { api_name: "Student name", field: "James Anderson" },
+  { api_name: "StudyVillage ID", field: 9238627185621753 },
+  { api_name: "Destination country", field: "United Kingdom" },
+  { api_name: "Study Institution", field: "Hull University" },
+  { api_name: "Study start date", field: "1 July 2024" },
+  { api_name: "Total Semesters", field: "6" },
+  { api_name: "Email address", field: "janderson@hack.com" },
+  { api_name: "Contact number", field: "+44 1234 5678 90" },
+  { api_name: "StudyVillage status", field: "Consolidating Studies" },
 ];
 
 const keys = Object.keys(datas);
-const CompanyProfile = () => {
+const StudyVillageStudents = () => {
   return (
     <div
       style={{
         backgroundColor: "#121F28",
         height: "100%",
-        padding: "100px 100px 223px 80px",
+        padding: "100px 100px 127px 80px",
       }}
     >
       <div style={{ display: "flex", paddingBottom: "30px" }}>
@@ -47,29 +52,44 @@ const CompanyProfile = () => {
           />
         </div>
       </div>
-      <h2>
-        <i style={{ color: "white" }}>Your Company Profile</i>
-      </h2>
-      <hr style={{ border: "1px solid #C5D512", marginTop: "25px" }} />
-      <Box
-        sx={{
-          color: "white",
-          fontSize: "12px",
-          paddingBottom: "40px",
-          paddingTop: "35px",
-        }}
-      >
-        <i
+      <div style={{ display: "flex" }}>
+        <div style={{ width: "70%" }}>
+          <h2>
+            <i style={{ color: "white" }}>Your StudyVillage students</i>
+          </h2>
+        </div>
+        <div
           style={{
+            width: "30%",
+            height: "40px",
             border: "1px solid #2FAFD4",
-            padding: "10px 10px 10px 10px",
+            paddingTop: "2px",
             borderRadius: "10px",
-            fontWeight: "bold",
+            display: "flex",
           }}
         >
-          PLEASE KEEP YOUR DETAILS UP TO DATE
-        </i>
-      </Box>
+          <SearchIcon
+            sx={{
+              color: "#2FAFD4",
+              width: "40px",
+              height: "40px",
+              paddingLeft: "8px",
+            }}
+          />
+          <b style={{ color: "#2FAFD4", paddingTop: "5px" }}>SEARCH</b>
+          <input
+            style={{
+              backgroundColor: "white",
+              maxHeight: "60%",
+              width: "74%",
+              marginTop: "6px",
+              border: "0px solid white",
+              marginLeft: "6px",
+            }}
+          />
+        </div>
+      </div>
+      <hr style={{ border: "1px solid #C5D512", marginBottom: "30px" }} />
 
       <TableContainer sx={{ maxWidth: "850px" }}>
         <Table
@@ -122,4 +142,4 @@ const CompanyProfile = () => {
   );
 };
 
-export default CompanyProfile;
+export default StudyVillageStudents;

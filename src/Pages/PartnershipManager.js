@@ -1,33 +1,34 @@
 import {
   Box,
+  Button,
   Grid,
   Table,
   TableCell,
   TableContainer,
   TableRow,
+  TextField,
   tableCellClasses,
 } from "@mui/material";
 import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import pic from "../components/CompanyProfile/studyvillage.png";
 import "./EveryPage.css";
+import SearchIcon from "@mui/icons-material/Search";
 const datas = [
-  { api_name: "Company Principal", field: "James Anderson" },
-  { api_name: "Referral ID", field: 9238627185621753 },
-  { api_name: "Key Contact email address", field: "svagent111@gmail.com" },
-  { api_name: "Company address", field: "95 Collins St Melbourne" },
-  { api_name: "Phone Number", field: "9781 5158" },
-  { api_name: "Website", field: "www.google.com" },
+  { api_name: "First name", field: "Glen" },
+  { api_name: "Last name", field: "Meehan" },
+  { api_name: "email address", field: "glenmeehan@studyvillage.org" },
+  { api_name: "Mobile/Cell Whatsapp number", field: "+61 411 251 535" },
+  { api_name: "Telephone", field: "(+613) 703 603 47 (ext.002)" },
 ];
 
-const keys = Object.keys(datas);
-const CompanyProfile = () => {
+const PartnershipManager = () => {
   return (
     <div
       style={{
         backgroundColor: "#121F28",
         height: "100%",
-        padding: "100px 100px 223px 80px",
+        padding: "100px 100px 236px 80px",
       }}
     >
       <div style={{ display: "flex", paddingBottom: "30px" }}>
@@ -48,30 +49,19 @@ const CompanyProfile = () => {
         </div>
       </div>
       <h2>
-        <i style={{ color: "white" }}>Your Company Profile</i>
+        <i style={{ color: "white" }}>Your StudyVillage partnership manager</i>
       </h2>
-      <hr style={{ border: "1px solid #C5D512", marginTop: "25px" }} />
-      <Box
-        sx={{
-          color: "white",
-          fontSize: "12px",
-          paddingBottom: "40px",
-          paddingTop: "35px",
-        }}
+      <hr style={{ border: "1px solid #C5D512", marginBottom: "30px" }} />
+      <div style={{ maxWidth: "40%" }}>
+        <p style={{ color: "#C5D512", fontSize: "15px" }}>
+          For account enquiries, assistance with a campaign or just a quick
+          chat, please feel to reach out to your super-friendly StudyVillage
+          account manager
+        </p>
+      </div>
+      <TableContainer
+        sx={{ maxWidth: "850px", paddingBottom: "40px", paddingTop: "20px" }}
       >
-        <i
-          style={{
-            border: "1px solid #2FAFD4",
-            padding: "10px 10px 10px 10px",
-            borderRadius: "10px",
-            fontWeight: "bold",
-          }}
-        >
-          PLEASE KEEP YOUR DETAILS UP TO DATE
-        </i>
-      </Box>
-
-      <TableContainer sx={{ maxWidth: "850px" }}>
         <Table
           sx={{
             [`& .${tableCellClasses.root}`]: {
@@ -122,4 +112,4 @@ const CompanyProfile = () => {
   );
 };
 
-export default CompanyProfile;
+export default PartnershipManager;
