@@ -6,12 +6,14 @@ import PartnershipManager from "./Pages/PartnershipManager";
 
 const App = () => {
   return (
-    <div>
-      <CompanyProfile />
-      {/* <StudyVillageStudents /> */}
-      {/* <Counsellors /> */}
-      {/* <PartnershipManager /> */}
-    </div>
+    <body style={{ backgroundColor: "#121F28" }}>
+      <div>
+        <CompanyProfile />
+        {/* <StudyVillageStudents /> */}
+        {/* <Counsellors /> */}
+        {/* <PartnershipManager /> */}
+      </div>
+    </body>
   );
 };
 
