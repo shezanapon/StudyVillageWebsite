@@ -29,11 +29,10 @@ const PartnershipManager = () => {
         backgroundColor: "#121F28",
         height: "100vh",
 
-        minWidth: "420px",
         overflowY: "hidden",
       }}
     >
-      <div style={{ padding: "50px 100px" }}>
+      <div style={{ padding: "50px 100px", minWidth: "425px" }}>
         {" "}
         <div style={{ display: "flex", paddingBottom: "30px" }}>
           <div style={{ width: "93%" }}>

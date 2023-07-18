@@ -8,9 +8,9 @@ const App = () => {
   return (
     <body style={{ backgroundColor: "#121F28" }}>
       <div>
-        <CompanyProfile />
+        {/* <CompanyProfile /> */}
         {/* <StudyVillageStudents /> */}
-        {/* <Counsellors /> */}
+        <Counsellors />
         {/* <PartnershipManager /> */}
       </div>
     </body>
