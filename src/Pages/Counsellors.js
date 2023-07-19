@@ -49,7 +49,11 @@ const Counsellors = () => {
           <Box sx={{ width: { xs: "25%", sm: "7%", md: "7%", lg: "7%" } }}>
             <MenuIcon
               size="large"
-              sx={{ color: "yellow", height: "100px", width: "100px" }}
+              sx={{
+                color: "yellow",
+                height: "100px",
+                width: { xs: "55px", sm: "70px", md: "100px" },
+              }}
             />
           </Box>
         </Box>
