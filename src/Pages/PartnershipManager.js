@@ -24,7 +24,7 @@ const datas = [
 
 const PartnershipManager = () => {
   return (
-    <div
+    <Box
       style={{
         backgroundColor: "#121F28",
         height: "100vh",
@@ -32,10 +32,10 @@ const PartnershipManager = () => {
         overflowY: "hidden",
       }}
     >
-      <div style={{ padding: "50px 100px", minWidth: "425px" }}>
+      <Box sx={{ p: { xs: 1, sm: 8, md: 12, lg: 12 } }}>
         {" "}
-        <div style={{ display: "flex", paddingBottom: "30px" }}>
-          <div style={{ width: "93%" }}>
+        <Box style={{ display: "flex", paddingBottom: "30px" }}>
+          <Box sx={{ width: { xs: "75%", sm: "93%", md: "93%", lg: "93%" } }}>
             <img
               src={
                 "https://studyvillage.org/wp-content/uploads/2020/10/Logo-long-green-white_Artboard-6-15.png"
@@ -43,27 +43,27 @@ const PartnershipManager = () => {
               alt="pic"
               style={{ width: "280px", height: "70px", paddingTop: "20px" }}
             />
-          </div>
-          <div style={{ width: "7%" }}>
+          </Box>
+          <Box sx={{ width: { xs: "25%", sm: "7%", md: "7%", lg: "7%" } }}>
             <MenuIcon
               size="large"
               sx={{ color: "yellow", height: "100px", width: "100px" }}
             />
-          </div>
-        </div>
+          </Box>
+        </Box>
         <h2>
           <i style={{ color: "white" }}>
             Your StudyVillage partnership manager
           </i>
         </h2>
         <hr style={{ border: "1px solid #C5D512", marginBottom: "30px" }} />
-        <div style={{ maxWidth: "40%" }}>
+        <Box style={{ maxWidth: "40%" }}>
           <p style={{ color: "#C5D512", fontSize: "15px" }}>
             For account enquiries, assistance with a campaign or just a quick
             chat, please feel to reach out to your super-friendly StudyVillage
             account manager
           </p>
-        </div>
+        </Box>
         <TableContainer
           sx={{ maxWidth: "850px", paddingBottom: "40px", paddingTop: "20px" }}
         >
@@ -113,8 +113,8 @@ const PartnershipManager = () => {
             })}
           </Table>
         </TableContainer>
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
 

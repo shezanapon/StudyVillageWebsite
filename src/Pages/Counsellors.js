@@ -27,15 +27,17 @@ const datas = [
 const keys = Object.keys(datas);
 const Counsellors = () => {
   return (
-    <div
+    <Box
       style={{
         backgroundColor: "#121F28",
         height: "100vh",
+
+        overflowY: "hidden",
       }}
     >
-      <div style={{ padding: "50px 100px", minWidth: "425px" }}>
-        <div style={{ display: "flex", paddingBottom: "30px" }}>
-          <div style={{ width: "93%" }}>
+      <Box sx={{ p: { xs: 1, sm: 8, md: 12, lg: 12 } }}>
+        <Box style={{ display: "flex", paddingBottom: "30px" }}>
+          <Box sx={{ width: { xs: "75%", sm: "93%", md: "93%", lg: "93%" } }}>
             <img
               src={
                 "https://studyvillage.org/wp-content/uploads/2020/10/Logo-long-green-white_Artboard-6-15.png"
@@ -43,53 +45,67 @@ const Counsellors = () => {
               alt="pic"
               style={{ width: "280px", height: "70px", paddingTop: "20px" }}
             />
-          </div>
-          <div style={{ width: "7%" }}>
+          </Box>
+          <Box sx={{ width: { xs: "25%", sm: "7%", md: "7%", lg: "7%" } }}>
             <MenuIcon
               size="large"
               sx={{ color: "yellow", height: "100px", width: "100px" }}
             />
-          </div>
-        </div>
-        <div style={{ display: "flex" }}>
-          <div style={{ width: "70%" }}>
-            <h2>
-              <i style={{ color: "white" }}>Your counsellors</i>
-            </h2>
-          </div>
-          <div
-            style={{
-              width: "30%",
-              height: "40px",
-              border: "1px solid #2FAFD4",
-              paddingTop: "2px",
-              borderRadius: "10px",
-              display: "flex",
-            }}
-          >
-            <SearchIcon
+          </Box>
+        </Box>
+        <Grid container>
+          <Grid item xs={12} sm={12} md={7} lg={7}>
+            <Box sx={{ width: "60%", xs: { width: "20%" } }}>
+              <h2>
+                <i style={{ color: "white" }}>Your Counsellors</i>
+              </h2>
+            </Box>
+          </Grid>
+          <Grid item xs={12} sm={12} md={5} lg={5}>
+            <Box
               sx={{
-                color: "#2FAFD4",
-                width: "40px",
+                width: "95%",
+                paddingRight: "5px",
                 height: "40px",
-                paddingLeft: "8px",
+                border: "1px solid #2FAFD4",
+                paddingTop: "2px",
+                borderRadius: "10px",
+                display: "flex",
               }}
-            />
-            <b style={{ color: "#2FAFD4", paddingTop: "5px" }}>SEARCH</b>
-            <input
-              style={{
-                backgroundColor: "white",
-                maxHeight: "60%",
-                width: "74%",
-                marginTop: "6px",
-                border: "0px solid white",
-                marginLeft: "6px",
-              }}
-            />
-          </div>
-        </div>
+            >
+              <SearchIcon
+                sx={{
+                  color: "#2FAFD4",
+                  width: "40px",
+                  height: "40px",
+                  paddingLeft: "8px",
+                }}
+              />
+              <b
+                style={{
+                  color: "#2FAFD4",
+                  paddingTop: "5px",
+                  fontSize: "15px",
+                }}
+              >
+                SEARCH
+              </b>
+              <input
+                style={{
+                  backgroundColor: "white",
+                  maxHeight: "60%",
+                  width: "74%",
+
+                  marginTop: "6px",
+                  border: "0px solid white",
+                  marginLeft: "6px",
+                }}
+              />
+            </Box>
+          </Grid>
+        </Grid>
         <hr style={{ border: "1px solid #C5D512", marginBottom: "30px" }} />
-        <div style={{ maxWidth: "60%" }}>
+        <Box style={{ maxWidth: "60%" }}>
           <p style={{ color: "#C5D512", fontSize: "15px" }}>
             Use this page to grant your education counsellors access to your
             Company’s StudyVillage portal. To grant access to your staff
@@ -98,7 +114,7 @@ const Counsellors = () => {
             counsellors to access our free counsellor training available from
             the Resources page.
           </p>
-        </div>
+        </Box>
         <TableContainer sx={{ maxWidth: "850px", paddingBottom: "40px" }}>
           <Table
             sx={{
@@ -146,7 +162,7 @@ const Counsellors = () => {
             })}
           </Table>
         </TableContainer>
-        <div style={{ paddingBottom: "22px" }}>
+        <Box style={{ paddingBottom: "22px" }}>
           <Button
             sx={{
               color: "white",
@@ -176,9 +192,9 @@ const Counsellors = () => {
           >
             DELETE A COUNSELLOR
           </Button>
-        </div>
-      </div>
-    </div>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 
