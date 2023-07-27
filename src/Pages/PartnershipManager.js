@@ -32,10 +32,10 @@ const PartnershipManager = () => {
         overflowY: "hidden",
       }}
     >
-      <Box sx={{ p: { xs: 1, sm: 8, md: 12, lg: 12 } }}>
+      <Box sx={{ p: { xs: 2, sm: 8, md: 12, lg: 12 } }}>
         {" "}
         <Box style={{ display: "flex", paddingBottom: "30px" }}>
-          <Box sx={{ width: { xs: "75%", sm: "93%", md: "93%", lg: "93%" } }}>
+          <Box sx={{ width: { xs: "85%", sm: "93%", md: "93%", lg: "93%" } }}>
             <img
               src={
                 "https://studyvillage.org/wp-content/uploads/2020/10/Logo-long-green-white_Artboard-6-15.png"
@@ -44,7 +44,7 @@ const PartnershipManager = () => {
               style={{ width: "280px", height: "70px", paddingTop: "20px" }}
             />
           </Box>
-          <Box sx={{ width: { xs: "25%", sm: "7%", md: "7%", lg: "7%" } }}>
+          <Box sx={{ width: { xs: "15%", sm: "7%", md: "7%", lg: "7%" } }}>
             <MenuIcon
               size="large"
               sx={{
@@ -61,7 +61,7 @@ const PartnershipManager = () => {
           </i>
         </h2>
         <hr style={{ border: "1px solid #C5D512", marginBottom: "30px" }} />
-        <Box style={{ maxWidth: "40%" }}>
+        <Box sx={{ maxWidth: { xs: "100%", sm: "80%", lg: "60%" } }}>
           <p style={{ color: "#C5D512", fontSize: "15px" }}>
             For account enquiries, assistance with a campaign or just a quick
             chat, please feel to reach out to your super-friendly StudyVillage
@@ -91,7 +91,7 @@ const PartnershipManager = () => {
                     whiteSpace: "nowrap ",
                   }}
                 >
-                  <TableCell
+                  {/* <TableCell
                     key={data.id}
                     align={data.align}
                     style={{
@@ -111,6 +111,12 @@ const PartnershipManager = () => {
                         {data.field}
                       </Grid>
                     </Grid>
+                  </TableCell> */}
+                  <TableCell>
+                    <b>{data.api_name}</b>
+                  </TableCell>
+                  <TableCell>
+                    <b>{data.field}</b>
                   </TableCell>
                 </TableRow>
               );

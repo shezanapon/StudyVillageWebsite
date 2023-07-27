@@ -20,29 +20,30 @@ const datas = [
   { api_name: "Website", field: "www.google.com" },
 ];
 
-const keys = Object.keys(datas);
 const CompanyProfile = () => {
   return (
     <Box
+      // change
       style={{
-        backgroundColor: "#121F28",
-        height: "100vh",
-
+        height: "100%",
         overflowY: "hidden",
       }}
     >
-      <Box sx={{ p: { xs: 1, sm: 8, md: 12, lg: 12 } }}>
+      {/* change */}
+
+      <Box sx={{ p: { xs: 2, sm: 6, md: 6, lg: 6 } }}>
         <Box style={{ display: "flex", paddingBottom: "30px" }}>
-          <Box sx={{ width: { xs: "75%", sm: "93%", md: "93%", lg: "93%" } }}>
+          <Box sx={{ width: { xs: "85%", sm: "93%", md: "93%", lg: "93%" } }}>
             <img
               src={
                 "https://studyvillage.org/wp-content/uploads/2020/10/Logo-long-green-white_Artboard-6-15.png"
               }
               alt="pic"
-              style={{ width: "280px", height: "70px", paddingTop: "20px" }}
+              // change
+              style={{ width: 300, paddingTop: "20px" }}
             />
           </Box>
-          <Box style={{ width: { xs: "25%", sm: "7%", md: "7%", lg: "7%" } }}>
+          <Box style={{ width: { xs: "15%", sm: "7%", md: "7%", lg: "7%" } }}>
             <MenuIcon
               size="large"
               sx={{
@@ -98,26 +99,11 @@ const CompanyProfile = () => {
                     whiteSpace: "nowrap ",
                   }}
                 >
-                  <TableCell
-                    key={data.id}
-                    align={data.align}
-                    style={{
-                      borderCollapse: "separate",
-                      borderSpacing: "10px",
-                      top: 57,
-                      minWidth: data.minWidth,
-                      padding: "12px 12px 12px 12px",
-                      display: "flex",
-                    }}
-                  >
-                    <Grid container spacing={2}>
-                      <Grid item xs={6}>
-                        <b>{data.api_name}</b>
-                      </Grid>
-                      <Grid item xs={4} sx={{ color: "#2E4E64" }}>
-                        {data.field}
-                      </Grid>
-                    </Grid>
+                  <TableCell>
+                    <b>{data.api_name}</b>
+                  </TableCell>
+                  <TableCell>
+                    <b>{data.field}</b>
                   </TableCell>
                 </TableRow>
               );

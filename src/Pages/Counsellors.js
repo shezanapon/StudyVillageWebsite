@@ -5,48 +5,90 @@ import {
   Table,
   TableCell,
   TableContainer,
+  TableHead,
   TableRow,
   TextField,
   tableCellClasses,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import pic from "../components/CompanyProfile/studyvillage.png";
 import "./EveryPage.css";
 import SearchIcon from "@mui/icons-material/Search";
+// const datas = [
+//   { api_name: "First name", field: "Katy" },
+//   { api_name: "Last name", field: "Holmes" },
+//   { api_name: "email address", field: "katy@dreamagent.com" },
+//   { api_name: "Mobile/Cell number (optional)", field: "+92 4567 8943" },
+//   { api_name: "Telephone", field: "+92 123 45556" },
+//   { api_name: "Portal access", field: "Granted" },
+//   { api_name: "StudyVillage training status", field: "Complete" },
+// ];
 const datas = [
-  { api_name: "First name", field: "Katy" },
-  { api_name: "Last name", field: "Holmes" },
-  { api_name: "email address", field: "katy@dreamagent.com" },
-  { api_name: "Mobile/Cell number (optional)", field: "+92 4567 8943" },
-  { api_name: "Telephone", field: "+92 123 45556" },
-  { api_name: "Portal access", field: "Granted" },
-  { api_name: "StudyVillage training status", field: "Complete" },
+  {
+    First_name: "Katy",
+    Last_name: "Holmes",
+    email: "katy@dreamagent.com",
+    mobile: "+92 4567 8943",
+    Telephone: "+92 123 45556",
+    Portal_access: "Granted",
+    status: "Complete",
+  },
+  {
+    First_name: "Shezan",
+    Last_name: "Holmes",
+    email: "katy@dreamagent.com",
+    mobile: "+92 4567 8943",
+    Telephone: "+92 123 45556",
+    Portal_access: "Granted",
+    status: "Complete",
+  },
+  {
+    First_name: "Katy",
+    Last_name: "Holmes",
+    email: "katy@dreamagent.com",
+    mobile: "+92 4567 8943",
+    Telephone: "+92 123 45556",
+    Portal_access: "Granted",
+    status: "Complete",
+  },
+  {
+    First_name: "Katy",
+    Last_name: "Holmes",
+    email: "katy@dreamagent.com",
+    mobile: "+92 4567 8943",
+    Telephone: "+92 123 45556",
+    Portal_access: "Granted",
+    status: "Complete",
+  },
 ];
 
 const keys = Object.keys(datas);
 const Counsellors = () => {
+  const [search, setSearch] = useState("");
   return (
     <Box
       style={{
-        backgroundColor: "#121F28",
-        height: "100vh",
-
+        height: "100%",
         overflowY: "hidden",
       }}
     >
-      <Box sx={{ p: { xs: 1, sm: 8, md: 12, lg: 12 } }}>
+      <Box sx={{ p: { xs: 2, sm: 6, md: 6, lg: 6 } }}>
         <Box style={{ display: "flex", paddingBottom: "30px" }}>
-          <Box sx={{ width: { xs: "75%", sm: "93%", md: "93%", lg: "93%" } }}>
+          <Box sx={{ width: { xs: "85%", sm: "93%", md: "93%", lg: "93%" } }}>
             <img
               src={
                 "https://studyvillage.org/wp-content/uploads/2020/10/Logo-long-green-white_Artboard-6-15.png"
               }
               alt="pic"
-              style={{ width: "280px", height: "70px", paddingTop: "20px" }}
+              style={{
+                width: 300,
+
+                paddingTop: "20px",
+              }}
             />
           </Box>
-          <Box sx={{ width: { xs: "25%", sm: "7%", md: "7%", lg: "7%" } }}>
+          <Box sx={{ width: { xs: "15%", sm: "7%", md: "7%", lg: "7%" } }}>
             <MenuIcon
               size="large"
               sx={{
@@ -95,6 +137,7 @@ const Counsellors = () => {
                 SEARCH
               </b>
               <input
+                onChange={(e) => setSearch(e.target.value)}
                 style={{
                   backgroundColor: "white",
                   maxHeight: "60%",
@@ -109,7 +152,7 @@ const Counsellors = () => {
           </Grid>
         </Grid>
         <hr style={{ border: "1px solid #C5D512", marginBottom: "30px" }} />
-        <Box style={{ maxWidth: "60%" }}>
+        <Box sx={{ maxWidth: { xs: "100%", sm: "80%", lg: "55%" } }}>
           <p style={{ color: "#C5D512", fontSize: "15px" }}>
             Use this page to grant your education counsellors access to your
             Company’s StudyVillage portal. To grant access to your staff
@@ -129,41 +172,49 @@ const Counsellors = () => {
               borderSpacing: "0px 10px",
             }}
           >
-            {datas.map((data, index) => {
-              return (
-                <TableRow
-                  className="cellColor"
-                  style={{
-                    // backgroundColor: "#2FAFD4",
-                    overflow: "hidden",
-                    height: "10px",
-                    whiteSpace: "nowrap ",
-                  }}
-                >
-                  <TableCell
-                    key={data.id}
-                    align={data.align}
-                    style={{
-                      borderCollapse: "separate",
-                      borderSpacing: "10px",
-                      top: 57,
-                      minWidth: data.minWidth,
-                      padding: "12px 12px 12px 12px",
-                      display: "flex",
-                    }}
-                  >
-                    <Grid container spacing={2}>
-                      <Grid item xs={6}>
-                        <b>{data.api_name}</b>
-                      </Grid>
-                      <Grid item xs={4} sx={{ color: "#2E4E64" }}>
-                        {data.field}
-                      </Grid>
-                    </Grid>
-                  </TableCell>
-                </TableRow>
-              );
-            })}
+            <TableHead sx={{ bgcolor: "white" }}>
+              <TableRow>
+                <TableCell sx={{ fontWeight: "bold", fontSize: "16px" }}>
+                  First Name
+                </TableCell>
+                <TableCell sx={{ fontWeight: "bold", fontSize: "16px" }}>
+                  Last Name
+                </TableCell>
+                <TableCell sx={{ fontWeight: "bold", fontSize: "16px" }}>
+                  Email address
+                </TableCell>
+                <TableCell sx={{ fontWeight: "bold", fontSize: "16px" }}>
+                  Mobile/Cell number (optional)
+                </TableCell>
+                <TableCell sx={{ fontWeight: "bold", fontSize: "16px" }}>
+                  Telephone
+                </TableCell>
+                <TableCell sx={{ fontWeight: "bold", fontSize: "16px" }}>
+                  Portal access
+                </TableCell>
+                <TableCell sx={{ fontWeight: "bold", fontSize: "16px" }}>
+                  StudyVillage training status
+                </TableCell>
+              </TableRow>
+            </TableHead>
+
+            {datas
+              .filter((value) =>
+                value.First_name.toLowerCase().includes(search)
+              )
+              .map((data, index) => {
+                return (
+                  <TableRow className="cellColor">
+                    <TableCell>{data.First_name}</TableCell>
+                    <TableCell>{data.Last_name}</TableCell>
+                    <TableCell>{data.email}</TableCell>
+                    <TableCell>{data.mobile}</TableCell>
+                    <TableCell>{data.Telephone}</TableCell>
+                    <TableCell>{data.Portal_access}</TableCell>
+                    <TableCell>{data.status}</TableCell>
+                  </TableRow>
+                );
+              })}
           </Table>
         </TableContainer>
         <Box style={{ paddingBottom: "22px" }}>
@@ -178,6 +229,7 @@ const Counsellors = () => {
               paddingLeft: "50px",
               paddingRight: "50px",
               marginRight: "20px",
+              marginBottom: { xs: "15px", sm: "0px" },
             }}
           >
             ADD A COUNSELLOR
